@@ -331,13 +331,17 @@ const form = useRef<HTMLFormElement>(null)
             </div>
           </div>
 
-         <JobCard
-  icon={jobIcon2}
-  date="2025-present"
-  role="Front-End Developer"
-  company="Mourelatos AE"
-  description="Worked as a Front-end Developer, responsible for updating and visually enhancing the official website using WordPress for"
-/>
+         <div className="hidden">
+
+          <JobCard
+            icon={jobIcon2}
+            date="2025-present"
+            role="Front-End Developer"
+            company="Mourelatos AE"
+            description="Worked as a Front-end Developer, responsible for updating and visually enhancing the official website using WordPress"
+          />
+          
+          </div>
 
 
         </section>
