@@ -320,7 +320,7 @@ const form = useRef<HTMLFormElement>(null)
               <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm leading-relaxed">
                 <strong className="font-bold font-montserrat">Intership: </strong>
                 Served as a Junior UI/UX Designer and Front-End Developer, and was part of the organizing team for the First International Humanoid Olympiad. Developed the website using React and Vite for {" "}
-                <a href="" className="hover:text-gray">
+                <a href="https://acumino.ai/" className="hover:text-gray">
                   <strong className="font-bold font-montserrat">Acumino</strong>
                 </a>
                 .
