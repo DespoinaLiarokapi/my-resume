@@ -325,7 +325,7 @@ const form = useRef<HTMLFormElement>(null)
                 </a>
                 .
               </p>
-              <a  href={`${import.meta.env.BASE_URL}CV.pdf`} download className="w-fit px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-center flex flex-row items-center gap-1 text-sm sm:text-base bg-muted-white text-dark hover:text-dark/90 hover:bg-white font-medium font-montserrat">
+              <a href={`${import.meta.env.BASE_URL}CV.pdf`} download className="w-fit px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-center flex flex-row items-center gap-1 text-sm sm:text-base bg-muted-white text-dark hover:text-dark/90 hover:bg-white font-medium font-montserrat">
                 <IoMdDownload size={20} className="sm:size-6 lg:size-7"/> Download my CV
               </a>
             </div>
