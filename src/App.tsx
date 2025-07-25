@@ -314,7 +314,7 @@ const form = useRef<HTMLFormElement>(null)
               
             <div className="min-h-[250px] leading-relaxed space-y-5 pt-0.5">
               
-              <div className="inline-block w-fit px-4 py-2 bg-muted-white/10 text-sm font-medium font-montserrat">
+              <div className="inline-block w-fit px-4 py-2 bg-muted-white/10 text-sm font-bold font-montserrat">
                 2025 - Present
               </div>
               <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm ">
