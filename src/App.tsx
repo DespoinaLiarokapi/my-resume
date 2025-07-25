@@ -319,7 +319,7 @@ const form = useRef<HTMLFormElement>(null)
               </div>
               <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm leading-relaxed">
                 <strong className="font-bold font-montserrat">Intership: </strong>
-                Served as a Junior UI/UX Designer and Front-End Developer, and was part of the organizing team for the First International Humanoid Olympiad. Developed the website using React and Vite for {" "}
+                Served as a Junior UI/UX Designer and Front-End Developer, rebuilding an internal GUI interface by migrating from a Python-based system (NiceGUI) to React, Vite, and Tailwind CSS to improve scalability, performance, and maintainability. Additionally, worked as a member of the team organizing the First International Humanoid Olympiad {" "}
                 <a href="https://acumino.ai/" className="hover:text-gray">
                   <strong className="font-bold font-montserrat">Acumino</strong>
                 </a>
