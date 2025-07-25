@@ -310,23 +310,23 @@ const form = useRef<HTMLFormElement>(null)
             <img
               src={jobIcon}
               alt="jobIcon"
-              className="w-full float-none sm:float-left max-w-[250px] sm:mr-6 mx-auto  mb-8 sm:mb-0 object-contain"/>
+              className="w-full float-none sm:float-left max-w-[250px] sm:mr-6 mx-auto mb-8 sm:mb-2  object-contain"/>
               
-            <div className="min-h-[250px] flex flex-col lg:justify-end gap-4">
+            <div className="min-h-[250px] leading-relaxed space-y-5 pt-0.5">
               
               <div className="inline-block w-fit px-4 py-2 bg-muted-white/10 text-sm font-medium font-montserrat">
                 2025 - Present
               </div>
-              <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm leading-relaxed">
+              <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm ">
                 <strong className="font-bold font-montserrat">Intership: </strong>
-                Served as a Junior UI/UX Designer and Front-End Developer, rebuilding an internal GUI interface by migrating from a Python-based system (NiceGUI) to React, Vite, and Tailwind CSS to improve scalability, performance, and maintainability. Additionally, worked as a member of the team organizing the First International Humanoid Olympiad {" "}
+                Served as a Junior UI/UX Designer and Front-End Developer, rebuilding an internal GUI by migrating from a Python-based system (NiceGUI) to React, Vite, and Tailwind CSS to improve scalability, performance, and maintainability. Additionally, worked as a member of the team organizing the First International Humanoid Olympiad for{" "}
                 <a href="https://acumino.ai/" className="hover:text-gray">
                   <strong className="font-bold font-montserrat">Acumino</strong>
                 </a>
                 .
               </p>
-              <a href={`${import.meta.env.BASE_URL}CV.pdf`} download className="w-fit px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-center flex flex-row items-center gap-1 text-sm sm:text-base bg-muted-white text-dark hover:text-dark/90 hover:bg-white font-medium font-montserrat">
-                <IoMdDownload size={20} className="sm:size-6 lg:size-7"/> Download my CV
+              <a href={`${import.meta.env.BASE_URL}CV.pdf`} download className=" w-fit px-4 sm:px-6 lg:px-8 py-3 sm:py-4 text-center flex flex-row items-center gap-1 text-sm sm:text-base bg-muted-white text-dark hover:text-dark/90 hover:bg-white font-medium font-montserrat">
+                <IoMdDownload size={20} className="sm:size-6 lg:size-7 "/> Download my CV
               </a>
             </div>
           </div>
