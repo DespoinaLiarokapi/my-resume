@@ -318,10 +318,10 @@ const form = useRef<HTMLFormElement>(null)
                 2025 - Present
               </div>
               <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm ">
-                <strong className="font-bold font-montserrat">Intership: </strong>
-                Served as a Junior UI/UX Designer and Front-End Developer, rebuilding an internal GUI by migrating from a Python-based system (NiceGUI) to React, Vite, and Tailwind CSS to improve scalability, performance, and maintainability. Additionally, worked as a member of the team organizing the First International Humanoid Olympiad for{" "}
-                <a href="https://acumino.ai/" className="hover:text-gray">
-                  <strong className="font-bold font-montserrat">Acumino</strong>
+                <a href="https://acumino.ai/" className="hover:text-gray"> <strong className="font-bold font-montserrat uppercase">Acumino : </strong></a> 
+                Served as a Junior UI/UX Designer and Front-End Developer Intern, rebuilding an internal GUI by migrating from a Python-based system (NiceGUI) to React, Vite, and Tailwind CSS to improve scalability, performance, and maintainability. Additionally, worked as a member of the team organizing the First 
+                <a href="https://humanoidolympiad.org/" className="hover:text-gray">
+                  <strong className="font-bold font-montserrat"> International Humanoid Olympiad 2025</strong>
                 </a>
                 .
               </p>
@@ -331,14 +331,14 @@ const form = useRef<HTMLFormElement>(null)
             </div>
           </div>
 
-         <div className="hidden">
+         <div className="">
 
           <JobCard
             icon={jobIcon2}
             date="2025-present"
-            role="Front-End Developer"
+            companyLink="https://www.mourelatos.gr/"
             company="Mourelatos AE"
-            description="Worked as a Front-end Developer, responsible for updating and visually enhancing the official website using WordPress"
+            description="Served as a Front-end Developer, responsible for updating and visually enhancing the official website using WordPress"
           />
           
           </div>
@@ -499,16 +499,16 @@ const form = useRef<HTMLFormElement>(null)
       <p className=" text-center text-md sm:text-base">&copy; 2025 All rights reserved.</p>
 
       <div className="flex flex-row items-center gap-6">
-        <a href="#" className="hover:text-gray">
+        <a href="https://github.com/DespoinaLiarokapi" className="hover:text-gray">
           <SiGithub className="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
-        <a href="#" className="hover:text-gray">
+        <a href="https://www.linkedin.com/in/despoina-vasiliki-liarokapi" className="hover:text-gray">
           <TiSocialLinkedinCircular className="w-7 h-7 sm:w-8 sm:h-8" />
         </a>
-        <a href="#" className="hover:text-gray">
+        <a href="mailto:despoinaliarokapi@gmail.com" className="hover:text-gray">
           <MdAlternateEmail className="w-6 h-6 sm:w-7 sm:h-7" />
         </a>
-        <a href="#" className="hover:text-gray">
+        <a href="tel:+306970015984" className="hover:text-gray">
           <FaPhoneAlt className="w-4 h-4 sm:w-6 sm:h-5" />
         </a>
       </div>

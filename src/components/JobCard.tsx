@@ -1,4 +1,4 @@
-export default function JobCard({ icon, company, role, date, description, buttonLink, buttonText = "More" }) {
+export default function JobCard({ icon, company, companyLink, date, description, buttonLink, buttonText = "More" }) {
   return (
     <div className="w-full lg:p-12 p-8 border border-muted-white/10 ">
       <img
@@ -11,11 +11,9 @@ export default function JobCard({ icon, company, role, date, description, button
         <div className="inline-block w-fit px-4 py-2 bg-muted-white/10 text-sm font-bold font-montserrat">{date}</div>
 
         <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm leading-relaxed font-poppins font-light">
-          <strong className="font-bold font-montserrat" >{role}:</strong> {description} for{" "}
-          <a href="#" className="hover:text-gray">
-            <strong className="font-bold font-montserrat">{company}</strong>
-          </a>
-          .
+          <a href={companyLink}><strong className="font-bold font-montserrat uppercase hover:text-gray" >{company} : </strong></a>
+          
+           {description}.
         </p>
 
         <a
