@@ -335,7 +335,7 @@ const form = useRef<HTMLFormElement>(null)
 
           <JobCard
             icon={jobIcon2}
-            date="2025-present"
+            date="2025 - present"
             companyLink="https://www.mourelatos.gr/"
             company="Mourelatos AE"
             description="Served as a Front-end Developer, responsible for updating and visually enhancing the official website using WordPress"
