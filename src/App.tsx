@@ -331,7 +331,7 @@ const form = useRef<HTMLFormElement>(null)
             </div>
           </div>
 
-         <div className="">
+         <div className="hidden">
 
           <JobCard
             icon={jobIcon2}
@@ -339,6 +339,7 @@ const form = useRef<HTMLFormElement>(null)
             companyLink="https://www.mourelatos.gr/"
             company="Mourelatos AE"
             description="Served as a Front-end Developer, responsible for updating and visually enhancing the official website using WordPress"
+            buttonLink="https://www.mourelatos.gr/
           />
           
           </div>
