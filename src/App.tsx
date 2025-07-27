@@ -168,7 +168,7 @@ const form = useRef<HTMLFormElement>(null)
   }
 
   return (
-   <div className="min-h-screen text-lg flex flex-col gap-4 [@media(max-width:274px)]:text-xs text-muted-white bg-dark font-light font-poppins">
+   <div className="min-h-screen w-screen text-lg flex flex-col gap-4 [@media(max-width:274px)]:text-xs text-muted-white bg-dark font-light font-poppins">
      
 
 
