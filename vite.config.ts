@@ -4,12 +4,16 @@ import path from 'path'
 import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
-  base: '/my-resume/',
+  base: '/my-resume/', 
   plugins: [
     react(),
     tailwindcss(),
   ],
-  
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, 'src'),
+    },
+  },
   server: {
     port: 3000,
   },
