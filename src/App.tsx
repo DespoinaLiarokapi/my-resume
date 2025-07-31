@@ -172,7 +172,7 @@ const form = useRef<HTMLFormElement>(null)
      
 
 
-    <header className=" lg:px-50 md:px-20 px-6 sticky top-0 z-1 border-1 border-muted-white/10 bg-dark/85 backdrop-blur-sm">
+    <header className=" lg:px-[12.5rem] md:px-20 px-6 sticky top-0 z-10 border border-muted-white/10 bg-dark/85 backdrop-blur-sm">
     
       <nav className="py-6 flex flex-row justify-between items-start">
           
@@ -223,7 +223,7 @@ const form = useRef<HTMLFormElement>(null)
       
     </header>
 
-    <main className="lg:px-50 md:px-20 px-6 flex-1 flex flex-col gap-6">
+    <main className="lg:px-[12.5rem] md:px-20 px-6 flex-1 flex flex-col gap-6">
         
 
         <section
@@ -251,7 +251,7 @@ const form = useRef<HTMLFormElement>(null)
                   </a>
                   <a
                     href="#about"
-                    className="px-8 py-4 border border-light-g text-muted-white hover:bg-muted-white/5 font-medium font-montserrat">
+                    className="px-8 py-4 border border-muted-white text-muted-white hover:bg-muted-white/5 font-medium font-montserrat">
                     Learn More
                   </a>
                 </div>
@@ -421,7 +421,7 @@ const form = useRef<HTMLFormElement>(null)
 
                 {/*Dropdown Tel Country menu */}
                  {showCountryDropdown && (
-                <div className="absolute top-full left-0 right-0 border border-muted-white/40 bg-dark mt-1 max-h-48 overflow-y-auto z-10">
+                <div className="absolute top-full left-0 right-0 border border-muted-white/40 bg-dark mt-1 max-h-48 overflow-y-auto z-20">
                   {countries.map((country) => (
                     <button
                       key={country.code}
@@ -495,7 +495,7 @@ const form = useRef<HTMLFormElement>(null)
         </section>
     </main>
     
-    <footer className="lg:px-50 md:px-20 p-6 flex flex-col md:flex-row items-center md:justify-between gap-4 flex-col border-1 border-muted-white/10 font-light font-poppins">
+    <footer className="lg:px-[12.5rem] md:px-20 p-6 flex flex-col md:flex-row items-center md:justify-between gap-4 flex-col border border-muted-white/10 font-light font-poppins">
         
       <p className=" text-center text-md sm:text-base">&copy; 2025 All rights reserved.</p>
 
