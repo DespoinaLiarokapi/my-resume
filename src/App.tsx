@@ -14,8 +14,6 @@ import emailjs from '@emailjs/browser';
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
 import { CheckCircle2Icon } from "lucide-react"
 import RequiredFieldPopUp from "./components/RequiredFieldPopUp"
-import { GiHamburgerMenu } from "react-icons/gi";
-import { Description } from "@radix-ui/react-dialog"
 import jobIcon2 from "./assets/images/job-icon-eclipse.svg"
 import { AiOutlineMenu } from "react-icons/ai";
 
@@ -421,7 +419,7 @@ const form = useRef<HTMLFormElement>(null)
 
                 {/*Dropdown Tel Country menu */}
                  {showCountryDropdown && (
-                <div className="absolute top-full left-0 right-0 border border-muted-white/40 bg-dark mt-1 max-h-48 overflow-y-auto z-20">
+                <div className="absolute top-full left-0 right-0 w-full border border-muted-white/40 bg-dark mt-1 max-h-48 overflow-y-auto z-20">
                   {countries.map((country) => (
                     <button
                       key={country.code}
@@ -495,7 +493,7 @@ const form = useRef<HTMLFormElement>(null)
         </section>
     </main>
     
-    <footer className="lg:px-[12.5rem] md:px-20 p-6 flex flex-col md:flex-row items-center md:justify-between gap-4 flex-col border border-muted-white/10 font-light font-poppins">
+    <footer className="lg:px-[12.5rem] md:px-20 p-6 flex flex-col md:flex-row items-center md:justify-between gap-4 border border-muted-white/10 font-light font-poppins">
         
       <p className=" text-center text-md sm:text-base">&copy; 2025 All rights reserved.</p>
 
