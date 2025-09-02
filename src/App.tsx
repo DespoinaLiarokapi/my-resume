@@ -2,24 +2,19 @@ import { MdAlternateEmail } from "react-icons/md"
 import { TiSocialLinkedinCircular } from "react-icons/ti"
 import { SiGithub } from "react-icons/si"
 import { FaPhoneAlt, FaBars } from "react-icons/fa"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { CheckIcon, ChevronDown } from "lucide-react"
 import JobCard from "./components/JobCard"
 import jobIcon from "./assets/images/job-icon-squares.svg"
 import Profile from "./assets/images/profile0.png"
 import Shapes from "./assets/shapes.gif"
 import { IoMdDownload } from "react-icons/io"
-import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Alert, AlertTitle, AlertDescription } from "@/components/ui/alert"
 import { CheckCircle2Icon } from "lucide-react"
 import RequiredFieldPopUp from "./components/RequiredFieldPopUp"
 import jobIcon2 from "./assets/images/job-icon-eclipse.svg"
 import { AiOutlineMenu } from "react-icons/ai";
-
-
-
-
 
 
 const countries = [
@@ -35,6 +30,10 @@ const countries = [
 ]
 
 export default function App() {
+
+  const pKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID
    
   const [isDropMenuOpen, setDropMenuOpen] = useState(false)
   const [selectedCountry, setSelectedCountry] = useState(null)
@@ -71,13 +70,14 @@ function validateField(field: string, value: string): string {
       if (!emailRegex.test(value)) return "Invalid email format.";
       return "";    
     case "tel":
-      // Allow empty or only country prefix
       if (
-    !value.trim() ||
-    (selectedCountry?.callingCode && value.trim() === `+${selectedCountry.callingCode}`)
-  ) {
-    return "";
-  }
+        !value.trim() ||
+        (selectedCountry?.callingCode &&
+          value.trim() === `+${selectedCountry.callingCode}`)
+      ) {
+        return ""; // valid if it is empty or only prefix
+      }
+      return telRegex.test(value) ? "" : "Invalid phone format.";
 
       // Validate full number format
     case "message":
@@ -90,12 +90,12 @@ function validateField(field: string, value: string): string {
 const form = useRef<HTMLFormElement>(null)
 
 
-  function handleSubmit(e) {
+  function  handleSubmit(e: React.FormEvent<HTMLFormElement>) {
   e.preventDefault();
 
   const fields = ["name", "email", "tel", "message"];
 
-  const errors = {};
+  const errors: Record<string, string> = {};
   fields.forEach((field) => {
     errors[field] = validateField(field, isFormData[field]);
   });
@@ -118,8 +118,8 @@ const form = useRef<HTMLFormElement>(null)
 
 
     emailjs
-      .sendForm("service_71d619l", "template_uxqqpek", form.current, {
-        publicKey: "miqYmOeonmztMlkH5",
+      .sendForm(serviceID, templateID, form.current, {
+        publicKey: pKey,
       })
       .then(
         () => {
@@ -144,7 +144,7 @@ const form = useRef<HTMLFormElement>(null)
 
   }
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
   const { id, value } = e.target;
 
   
@@ -184,15 +184,15 @@ const form = useRef<HTMLFormElement>(null)
           {/* Right: Navigation */}
 
           <nav className="md:flex md:flex-row hidden space-x-8 font-light font-poppins">
-            <a href="#home" className="hover:text-gray">Home</a>
-            <a href="#about" className="hover:text-gray">About</a>
-            <a href="#experience" className="hover:text-gray">Experience</a>
-            <a href="#contact" className=" hover:text-gray">Contact</a>
+            <a href="#home" className="hover:underline decoration-muted-white">Home</a>
+            <a href="#about" className="hover:underline decoration-muted-white">About</a>
+            <a href="#experience" className="hover:underline decoration-muted-white">Experience</a>
+            <a href="#contact" className=" hover:underline decoration-muted-white">Contact</a>
           </nav>
 
           {/* Mobile Menu hamburger Button */}
           <div className="md:hidden">
-            <button onClick={() => setDropMenuOpen(!isDropMenuOpen)} className="px-2">
+            <button onClick={() => setDropMenuOpen(!isDropMenuOpen)} className="px-2 no-focus-ring focus:outline-none focus:ring-0">
               <AiOutlineMenu size={24} className="scale-y-90"/>
             </button>
           </div>
@@ -201,19 +201,19 @@ const form = useRef<HTMLFormElement>(null)
 
       {/* Mobile Navigation Dropdown */}
       {isDropMenuOpen && (
-            <nav className="pb-6 md:hidden text-right text-lg font-light font-poppins">
+            <nav className=" absolute top-full right-0 left-0 bg-dark/85 backdrop-blur-sm px-6 pb-13 text-right text-lg font-light font-poppins ">
               <ul className="space-y-2">
                 <li>
-                  <a className="hover:text-gray" href="#home" onClick={() => setDropMenuOpen(false)}>Home</a>
+                  <a className="hover:underline decoration-muted-white" href="#home" onClick={() => setDropMenuOpen(false)}>Home</a>
                 </li>
                 <li>
-                  <a className="hover:text-gray" href="#about" onClick={() => setDropMenuOpen(false)}>About</a>
+                  <a className="hover:underline decoration-muted-white" href="#about" onClick={() => setDropMenuOpen(false)}>About</a>
                 </li>
                 <li>
-                  <a className="hover:text-gray" href="#experience" onClick={() => setDropMenuOpen(false)}>Experience</a>
+                  <a className="hover:underline decoration-muted-white" href="#experience" onClick={() => setDropMenuOpen(false)}>Experience</a>
                 </li>
                 <li>
-                  <a className=" hover:text-gray" href="#contact" onClick={() => setDropMenuOpen(false)}>Contact</a>
+                  <a className=" hover:underline decoration-muted-white" href="#contact" onClick={() => setDropMenuOpen(false)}>Contact</a>
                 </li>
               </ul>
             </nav>
@@ -277,18 +277,15 @@ const form = useRef<HTMLFormElement>(null)
               className="w-full float-none sm:float-left max-w-[250px] sm:mr-6 mx-auto  mb-8 sm:mb-0 object-contain"/>
 
             <div className="min-h-[250px] md:text-xl sm:text-base [@media(max-width:274px)]:text-sm leading-relaxed">
-              <p className="mt-0 sm:mt-5">
+              <p className="mt-0 ">
                 
-                Hello, I am <strong className="font-bold font-montserrat">Despoina Vasiliki Liarokapi</strong>, a UX/UI designer & front-end
+                Hello, I am <strong className="font-bold font-montserrat">Despoina Vasiliki Liarokapi</strong>, a UX/UI designer & junior front-end
                 developer based in Athens, GR.
-              </p>
-              <p>
-                I am a graduate of the Department of Informatics at the Athens University of Economics and Business,
-                with an interest in programming and information technology. I'm drawn to the combination of technology
-                with creative fields, such as audiovisual design and marketing. My goal is to bring together technical
-                and artistic skills to contribute to projects that are innovative and inspiring. I'm open to
-                opportunities that connect informatics with creative expression, aiming to add meaningful value to every
-                collaboration. Alongside this, I'm involved in music creation, which enhances my creativity and sense of
+                <br />
+                I am a graduate of the Department of Informatics at the Athens University of Economics and Business, with a strong interest in technology and creative fields such as audiovisual design, marketing, and digital storytelling. 
+                I’m passionate about blending technical expertise with artistic vision to contribute to projects that are both innovative and inspiring.
+                My aim is to design experiences that not only function seamlessly but also leave a lasting impression on users.
+                Alongside this, I'm involved in music creation, which enhances my creativity and sense of
                 expression.
               </p>
             </div>
@@ -316,9 +313,10 @@ const form = useRef<HTMLFormElement>(null)
                 2025 - Present
               </div>
               <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm ">
-                <a href="https://acumino.ai/" className="hover:text-gray"> <strong className="font-bold font-montserrat uppercase">Acumino : </strong></a> 
+                <a href="https://acumino.ai/" className="hover:underline decoration-muted-white"> <strong className="font-bold font-montserrat uppercase">Acumino</strong></a>
+                <strong className="font-bold font-montserrat"> : </strong>
                 Served as a Junior UI/UX Designer and Front-End Developer Intern, rebuilding an internal GUI by migrating from a Python-based system (NiceGUI) to React, Vite, and Tailwind CSS to improve scalability, performance, and maintainability. Additionally, worked as a member of the team organizing the First 
-                <a href="https://humanoidolympiad.org/" className="hover:text-gray">
+                <a href="https://humanoidolympiad.org/" className="hover:underline decoration-muted-white">
                   <strong className="font-bold font-montserrat"> International Humanoid Olympiad 2025</strong>
                 </a>
                 .
@@ -414,7 +412,7 @@ const form = useRef<HTMLFormElement>(null)
                   type="tel"
                   placeholder={"Your number (optional)"}
             
-                  className="flex-1 px-2 py-3"
+                  className="w-full px-2 py-3 "
                 />
 
                 {/*Dropdown Tel Country menu */}
@@ -498,16 +496,16 @@ const form = useRef<HTMLFormElement>(null)
       <p className=" text-center text-md sm:text-base">&copy; 2025 All rights reserved.</p>
 
       <div className="flex flex-row items-center gap-6">
-        <a href="https://github.com/DespoinaLiarokapi" className="hover:text-gray">
+        <a href="https://github.com/DespoinaLiarokapi" className="hover:text-white">
           <SiGithub className="w-5 h-5 sm:w-6 sm:h-6" />
         </a>
-        <a href="https://www.linkedin.com/in/despoina-vasiliki-liarokapi" className="hover:text-gray">
+        <a href="https://www.linkedin.com/in/despoina-vasiliki-liarokapi" className="hover:text-white">
           <TiSocialLinkedinCircular className="w-7 h-7 sm:w-8 sm:h-8" />
         </a>
-        <a href="mailto:despoinaliarokapi@gmail.com" className="hover:text-gray">
+        <a href="mailto:despoinaliarokapi@gmail.com" className="hover:text-white">
           <MdAlternateEmail className="w-6 h-6 sm:w-7 sm:h-7" />
         </a>
-        <a href="tel:+306970015984" className="hover:text-gray">
+        <a href="tel:+306970015984" className="hover:text-white">
           <FaPhoneAlt className="w-4 h-4 sm:w-6 sm:h-5" />
         </a>
       </div>

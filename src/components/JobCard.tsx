@@ -11,8 +11,8 @@ export default function JobCard({ icon, company, companyLink, date, description,
         <div className="inline-block w-fit px-4 py-2 bg-muted-white/10 text-sm font-bold font-montserrat">{date}</div>
 
         <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm leading-relaxed font-poppins font-light">
-          <a href={companyLink}><strong className="font-bold font-montserrat uppercase hover:text-gray" >{company} : </strong></a>
-          
+          <a href={companyLink}><strong className="font-bold font-montserrat uppercase hover:underline decoration-color-muted-white" >{company}</strong></a>
+            <strong className="font-bold font-montserrat"> : </strong>
            {description}.
         </p>
 

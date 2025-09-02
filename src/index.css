@@ -38,9 +38,13 @@ html, body, #root {
 
 }
 
-*:focus {
-  @apply outline-none ring-1 ring-white ; 
+@layer base {
+  /* show focus for keyboard users only */
+  :focus-visible:not(.no-focus-ring) {
+    @apply outline-none ring-2 ring-white;
+  }
 }
+
 
 
 
