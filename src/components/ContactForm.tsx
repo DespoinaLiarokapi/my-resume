@@ -221,7 +221,7 @@ export default function ContactForm() {
              <button
               type="button"
               onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-              className="flex items-center w-16 pl-3 pr-2 py-3 gap-3 "
+              className="flex items-center w-16 pl-4 pr-1 py-3 gap-3 "
             >
               <div className="w-4 flex justify-center ">{selectedCountry && <span>{selectedCountry.flag}</span>}</div>
               <ChevronDown
@@ -238,7 +238,7 @@ export default function ContactForm() {
               value={isFormData.tel}
               type="tel"
               placeholder="Your number (optional)"
-              className="w-full pr-2 py-3 focus:outline-none"
+              className="w-full pl-1 pr-2 py-3 focus:outline-none"
             />
 
             {/*Dropdown Tel Country menu */}
