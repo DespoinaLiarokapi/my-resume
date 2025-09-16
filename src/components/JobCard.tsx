@@ -1,4 +1,14 @@
-export default function JobCard({ icon, company, companyLink, date, description, buttonLink, buttonText = "More" }) {
+interface JobCardProps {
+  icon: string 
+  company: string
+  companyLink: string
+  date: string
+  description: string
+  buttonLink: string
+  buttonText?: string
+}
+
+export default function JobCard({ icon , company, companyLink, date, description, buttonLink, buttonText = "More" }: JobCardProps) {
   return (
     <div className="w-full lg:p-12 p-8 border border-muted-white/10 ">
       <img
@@ -11,7 +21,7 @@ export default function JobCard({ icon, company, companyLink, date, description,
         <div className="inline-block w-fit px-4 py-2 bg-muted-white/10 text-sm font-bold font-montserrat">{date}</div>
 
         <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm leading-relaxed font-poppins font-light">
-          <a href={companyLink}><strong className="font-bold font-montserrat uppercase hover:underline decoration-color-muted-white" >{company}</strong></a>
+          <a href={companyLink}><strong className="font-bold font-montserrat uppercase hover:underline underline-offset-4 decoration-color-muted-white" >{company}</strong></a>
             <strong className="font-bold font-montserrat"> : </strong>
            {description}.
         </p>

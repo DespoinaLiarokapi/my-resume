@@ -1,13 +1,13 @@
-import { RiAlertFill } from "react-icons/ri";
+import { RiAlertFill } from "react-icons/ri"
 
 interface RequiredFieldPopUpProps {
-  message?: "missing inputs" | "invalid email" | "invalid number"
+  message?: string
   isVisible: boolean
   position?: "top" | "bottom" | "left" | "right"
 }
 
 export default function RequiredFieldPopUp({
-  message = "",
+  message,
   isVisible=true,
   position = "top",
 }: RequiredFieldPopUpProps) {

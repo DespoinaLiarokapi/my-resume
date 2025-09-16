@@ -4,23 +4,20 @@
   "version": "0.0.0",
   "type": "module",
   "homepage": "https://www.despoinaliarokapi.com",
-
- "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "lint": "eslint .",
-  "preview": "vite preview",
-  "predeploy": "npm run build",
-  "deploy": "gh-pages -d dist"
-}
-,
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-popover": "^1.1.14",
     "@radix-ui/react-scroll-area": "^1.2.9",
     "@radix-ui/react-slot": "^1.2.3",
-    "@tailwindcss/vite": "^4.1.11",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "cmdk": "^1.1.1",
@@ -36,6 +33,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.25.0",
+    "@tailwindcss/vite": "^4.1.13",
     "@types/node": "^24.0.12",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
