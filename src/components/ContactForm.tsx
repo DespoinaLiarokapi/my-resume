@@ -218,13 +218,17 @@ export default function ContactForm() {
           
             <RequiredFieldPopUp isVisible={Boolean(formAlerts.tel)} message={formAlerts.tel} position="top" />
 
-            <button
+             <button
               type="button"
               onClick={() => setShowCountryDropdown(!showCountryDropdown)}
-              className="flex items-center pr-2 pl-4  py-3">
-
-                <ChevronDown className="w-4 h-4 opacity-50" />
-             
+              className="flex items-center w-16 pl-3 pr-2 py-3 gap-3 "
+            >
+              <div className="w-4 flex justify-center ">{selectedCountry && <span>{selectedCountry.flag}</span>}</div>
+              <ChevronDown
+                className={`w-4 h-4 opacity-50 transition-transform duration-200 ${
+                  showCountryDropdown ? "rotate-180" : "rotate-0"
+                }`}
+              />
             </button>
 
             <input
@@ -233,8 +237,8 @@ export default function ContactForm() {
               onChange={handleChange}
               value={isFormData.tel}
               type="tel"
-              placeholder={"Your number (optional)"}
-              className="w-full px-2 py-3 "
+              placeholder="Your number (optional)"
+              className="w-full pr-2 py-3 focus:outline-none"
             />
 
             {/*Dropdown Tel Country menu */}

@@ -1,3 +1,4 @@
+
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -36,13 +37,16 @@ html, body, #root {
 }
 
 @layer base {
+  /* show focus for keyboard users only */
   :focus-visible:not(.no-focus-ring) {
     @apply outline-none ring-2 ring-white;
   }
 }
 
 
-/*custom fonts*/
+
+
+
 @font-face {
   font-family: "Montserrat";
   src: url("./assets/fonts/Montserrat/static/Montserrat-Light.ttf") format("truetype");
