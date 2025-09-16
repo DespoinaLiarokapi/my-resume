@@ -8,6 +8,7 @@ import emailjs from "@emailjs/browser"
 import { validateField } from "../utils/fieldFormValidation"
 import Shapes from "../assets/shapes.gif"
 
+
 type Country = {
   code: string
   name: string
@@ -51,12 +52,12 @@ export default function ContactForm() {
 
   // state
   type SelectedCountryState = Country | null
-  const [selectedCountry, setSelectedCountry] = useState<SelectedCountryState>(null)
+  const [selectedCountry, setSelectedCountry] = useState<SelectedCountryState>(countries[0])
   const [showCountryDropdown, setShowCountryDropdown] = useState(false)
   const [isFormData, setFormData] = useState<FormValues>({
     name: "",
     email: "",
-    tel: "",
+    tel: "+30",
     message: "",
   })
   const [formAlerts, setFormAlerts] = useState<formAlertsValues>({
@@ -134,7 +135,7 @@ export default function ContactForm() {
             setFormData({
               name: "",
               email: "",
-              tel: "",
+              tel: "+30",
               message: "",
             })
             setFormAlerts({
@@ -143,6 +144,7 @@ export default function ContactForm() {
               tel: "",
               message: "",
             })
+            setSelectedCountry(countries[0])
           },
           (error) => {
             console.log("Submission FAILED...", error.text)
