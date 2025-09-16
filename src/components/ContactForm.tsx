@@ -152,7 +152,7 @@ export default function ContactForm() {
         )
     } 
 
-    setTimeout(() => setResult(""), 4000)
+    window.setTimeout(() => setResult(""), 4000)
   }
 
   useEffect(() => {
