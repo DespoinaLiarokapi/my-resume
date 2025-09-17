@@ -24,7 +24,7 @@ export default function Experience(){
                     <div className="min-h-[250px] leading-relaxed space-y-5 pt-0.5">
                       
                       <div className="inline-block w-fit px-4 py-2 bg-muted-white/10 text-sm font-bold font-montserrat">
-                        Mar 2025 - Present
+                        Apr 2025 - Present
                       </div>
                       <p className="md:text-xl sm:text-base [@media(max-width:274px)]:text-sm ">
                         <a href="https://acumino.ai/" className="hover:underline underline-offset-4 decoration-muted-white"> <strong className="font-bold font-montserrat uppercase">Acumino</strong></a>
