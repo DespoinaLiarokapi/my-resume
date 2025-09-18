@@ -20,7 +20,7 @@ export default function Footer(){
 
         <a
           href="mailto:despoinaliarokapi@gmail.com"
-          className="text-white hover:text-gray-300 transition-colors"
+          className=" hover:text-gray"
           aria-label="Email"
         >
           <SiMaildotru className="w-5 h-5 sm:w-6 sm:h-6" />
@@ -28,7 +28,7 @@ export default function Footer(){
         </a>
 
 
-        <a href="tel:+306970015984" className="text-white hover:text-gray-300 transition-colors" aria-label="Phone">
+        <a href="tel:+306970015984" className="hover:text-gray" aria-label="Phone">
           <FaPhone className="w-4 h-4 sm:w-5 sm:h-5" />
         </a>
 
